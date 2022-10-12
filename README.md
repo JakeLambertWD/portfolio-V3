@@ -2,8 +2,14 @@
 
 https://jaketrent.github.io/react-social-icons/
 
-## framer motion
+## Framer Motion
 
-## react simple typewriter
+https://www.framer.com/motion/
+
+## React Simple Typewriter
+
+https://www.npmjs.com/package/react-simple-typewriter
 
 ## Storybook
+
+https://storybook.js.org/
