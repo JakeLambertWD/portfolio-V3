@@ -16,7 +16,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-simple-typewriter": "^4.0.5",
-    "react-social-icons": "^5.15.0"
+    "react-social-icons": "^5.15.0",
+    "storybook-dark-mode": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -24,6 +25,7 @@
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
     "@storybook/addon-links": "^6.5.12",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/react": "^6.5.12",
