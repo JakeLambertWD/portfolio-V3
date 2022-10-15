@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import About from '../components/About';
 import NavBar from '../components/Header';
 import Hero from '../components/Hero';
 
@@ -14,11 +15,14 @@ const Home: NextPage = () => {
 
 			<NavBar />
 
-			<section id='hero' className='snap-center'>
+			<section id='hero' className='snap-start'>
 				<Hero />
 			</section>
 
 			{/* //TODO About */}
+			<section id='about' className='snap-center'>
+				<About />
+			</section>
 
 			{/* //TODO Experience */}
 

@@ -13,3 +13,5 @@ https://www.npmjs.com/package/react-simple-typewriter
 ## Storybook
 
 https://storybook.js.org/
+
+# Sanity.io
