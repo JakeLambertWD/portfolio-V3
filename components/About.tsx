@@ -29,8 +29,8 @@ export default function About({}: Props) {
 
 			<div className='space-y-10 px-0 md:px-10'>
 				<h4 className='text-4xl font-semibold'>
-					Here is a bit of{' '}
-					<span className='underline decoration-[#f7ab0a]'>background</span> story
+					Here is my <span className='underline decoration-[#f7ab0a]'>background</span>{' '}
+					story
 				</h4>
 				<p className='text-base'>
 					At this current moment I have 1 year 4 months of experience under my belt for 3
