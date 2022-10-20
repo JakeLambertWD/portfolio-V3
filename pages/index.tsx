@@ -4,6 +4,7 @@ import Image from 'next/image';
 import About from '../components/About';
 import NavBar from '../components/Header';
 import Hero from '../components/Hero';
+import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
 
 const Home: NextPage = () => {
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
+			{/* //TODO make animations move in & bounce (x: -100, x: 10, x:0) */}
 			<NavBar />
 
 			<section id='hero' className='snap-start'>
@@ -24,12 +26,13 @@ const Home: NextPage = () => {
 				<About />
 			</section>
 
-			{/* //TODO Experience */}
 			<section id='experience' className='snap-center'>
 				<WorkExperience />
 			</section>
 
-			{/* //TODO Skills */}
+			<section id='skills' className='snap-center'>
+				<Skills />
+			</section>
 
 			{/* //TODO Experience */}
 
