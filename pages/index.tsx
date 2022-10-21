@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import About from '../components/About';
 import ContactMe from '../components/ContactMe';
 import NavBar from '../components/Header';
@@ -11,7 +12,8 @@ import WorkExperience from '../components/WorkExperience';
 
 const Home: NextPage = () => {
 	return (
-		<div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0'>
+		// TODO have a play around with scrollbar-none
+		<div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin'>
 			<Head>
 				<title>Jakes Portfolio</title>
 				<link rel='icon' href='/favicon.ico' />
@@ -43,6 +45,18 @@ const Home: NextPage = () => {
 			<section id='contact' className='snap-center'>
 				<ContactMe />
 			</section>
+
+			<Link href='#hero'>
+				<footer className='sticky bottom-5 w-full cursor-pointer'>
+					<div className='flex items-center justify-center'>
+						<img
+							src='https://avatars.githubusercontent.com/u/59619665?v=4'
+							alt='me'
+							className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
+						/>
+					</div>
+				</footer>
+			</Link>
 		</div>
 	);
 };

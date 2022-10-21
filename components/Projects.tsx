@@ -15,11 +15,11 @@ export default function Projects({}: Props) {
 				Projects
 			</h3>
 
-			<div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
+			<div className='scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
 				{projects.map((item, i) => (
 					<div
 						key={item}
-						className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'
+						className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen '
 					>
 						<motion.img
 							initial={{ opacity: 0, y: -300 }}
