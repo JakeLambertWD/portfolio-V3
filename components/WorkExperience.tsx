@@ -19,6 +19,10 @@ export default function WorkExperience({}: Props) {
 				<Card />
 				<Card />
 				<Card />
+				<Card />
+				<Card />
+				<Card />
+				<Card />
 			</div>
 		</motion.div>
 	);

@@ -9,5 +9,5 @@ import project from './project';
 
 export default createSchema({
 	name: 'default',
-	types: schemaTypes.concat([pageInfo, experience, skill, social, project])
+	types: schemaTypes.concat([pageInfo, experience, project, skill, social])
 });

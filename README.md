@@ -17,3 +17,7 @@ https://storybook.js.org/
 # Sanity.io
 
 # React Hook Forms
+
+# Sanity.io toolkit for Next.js
+
+https://github.com/sanity-io/next-sanity
