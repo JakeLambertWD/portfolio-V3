@@ -13,6 +13,40 @@ interface Image {
 	};
 }
 
+export interface PageInfo extends SanityBody {
+	_type: 'pageInfo';
+	address: string;
+	backgroundInformation: string;
+	email: string;
+	heroImage: Image;
+	name: string;
+	phoneNumber: string;
+	profilePic: Image;
+	role: string;
+
+}
+
+export interface Experience extends SanityBody {
+	_type: 'experience';
+	company: string;
+	companyImage: Image;
+	dateStarted: date;
+	dateEnded: date;
+	isCurrentlyWorkingHere: boolean;
+	jobTitle: string;
+	points: string[];
+	company: Technology[];
+}
+
+export interface Project extends SanityBody {
+	_type: 'project';
+	image: Image;
+	linkToBuild: string;
+	summary: string;
+	technologies: Technology[];
+	title: string;
+}
+
 export interface Social extends SanityBody {
 	_type: 'social';
 	title: string;
@@ -31,37 +65,4 @@ export interface Technology extends SanityBody {
 	image: Image;
 	progress: number;
 	title: string;
-}
-
-export interface PageInfo extends SanityBody {
-	_type: 'pageInfo';
-	address: string;
-	backgroundInformation: string;
-	email: string;
-	heroImage: Image;
-	name: string;
-	phoneNumber: string;
-	profilePic: Image;
-	role: string;
-}
-
-export interface Project extends SanityBody {
-	_type: 'project';
-	image: Image;
-	linkToBuild: string;
-	summary: string;
-	technologies: Technology[];
-	title: string;
-}
-
-export interface Experience extends SanityBody {
-	_type: 'experience';
-	company: string;
-	companyImage: Image;
-	dateStarted: date;
-	dateEnded: date;
-	isCurrentlyWorkingHere: boolean;
-	jobTitle: string;
-	points: string[];
-	company: Technology[];
 }

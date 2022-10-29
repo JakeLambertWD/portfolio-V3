@@ -21,3 +21,11 @@ https://storybook.js.org/
 # Sanity.io toolkit for Next.js
 
 https://github.com/sanity-io/next-sanity
+
+# DaisyUI
+
+https://daisyui.com/
+
+# cslx
+
+https://github.com/lukeed/clsx
