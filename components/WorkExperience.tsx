@@ -4,7 +4,7 @@ import { Experience } from "../typings";
 import Card from "./Card";
 
 // TODO remove the opacity on hover, try to make it when card in center of screen
-type Props = { experiences: Experience };
+type Props = { experiences: Experience[] };
 
 export default function WorkExperience({ experiences }: Props) {
   return (
@@ -19,7 +19,9 @@ export default function WorkExperience({ experiences }: Props) {
       </h3>
 
       <div className="scrollbar-thin w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
-        <Card />
+        {experiences.map((experience) => (
+          <Card key={experience._id} experience={experience} />
+        ))}
       </div>
     </motion.div>
   );
