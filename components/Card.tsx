@@ -22,18 +22,26 @@ export default function Card({ experience }: Props) {
         <h4 className="text-4xl font-light">Front End Dev</h4>
         <p className="mt-1 text-2xl font-bold">Guider</p>
         <div className="flex my-2 space-x-2">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
-            alt="Tailwind"
-            className="w-10 h-10 rounded-full"
-          />
+          {experience?.technologies.map((technology) => (
+            <img
+              key={technology._id}
+              src={urlFor(technology?.image).url()}
+              alt="Tailwind"
+              className="w-10 h-10 rounded-full"
+            />
+          ))}
         </div>
-        <p className="text-gray-300 uppercase">Started Work... - Ended...</p>
+        <p className="text-gray-300 uppercase">
+          {new Date(experience?.dateStarted).toDateString()} -{" "}
+          {experience?.isCurrentlyWorkingHere
+            ? "Present"
+            : new Date(experience?.dateEnded).toDateString()}
+        </p>
 
-        <ul className="ml-5 space-y-4 text-lg list-disc">
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
+        <ul className="ml-5 space-y-4 overflow-y-scroll text-lg list-disc max-h-96 pr-5  scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]">
+          {experience?.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
         </ul>
       </div>
     </article>

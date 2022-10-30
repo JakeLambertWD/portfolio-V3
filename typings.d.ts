@@ -35,7 +35,8 @@ export interface Experience extends SanityBody {
 	isCurrentlyWorkingHere: boolean;
 	jobTitle: string;
 	points: string[];
-	company: Technology[];
+	technologies: Technology[];
+	company: string;
 }
 
 export interface Project extends SanityBody {
