@@ -18,13 +18,16 @@ export default function Header({ socials }: Props) {
         {socials.map((icon) => {
           const titleToLowerCase = icon.title.toLocaleLowerCase();
           return (
-            <SocialIcon
-              key={icon._id}
-              url={icon.url}
-              network={titleToLowerCase}
-              fgColor="gray"
-              bgColor="transparent"
-            />
+            <Link key={icon?._id} href={icon?.url}>
+              <a target="_blank">
+                <SocialIcon
+                  key={icon?._id}
+                  network={titleToLowerCase}
+                  fgColor="gray"
+                  bgColor="transparent"
+                />
+              </a>
+            </Link>
           );
         })}
       </motion.div>
@@ -36,11 +39,7 @@ export default function Header({ socials }: Props) {
           transition={{ duration: 1.5 }}
           className="flex flex-row items-center text-gray-300 cursor-pointer"
         >
-          <SocialIcon
-            network={socials[0].title}
-            fgColor="gray"
-            bgColor="transparent"
-          />
+          <SocialIcon network="email" fgColor="gray" bgColor="transparent" />
           <p className="hidden text-sm text-gray-400 uppercase md:inline-flex">
             Get In Touch!
           </p>

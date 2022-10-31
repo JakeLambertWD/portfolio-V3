@@ -25,7 +25,7 @@ export default function About({ pageInfo }: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        className="mb-20 md:mb-0 flex-shrink-0 rounded-full w-56 h-56 md:w-95 md:h-95 xl:h-[400px] xl:w-[400px]  md:rounded-lg"
+        className="mb-20 md:mb-0 flex-shrink-0 rounded-full w-56 h-56 md:w-95 md:h-95 xl:h-[600px] xl:w-[400px] object-cover md:rounded-lg"
       />
 
       <div className="px-0 space-y-10 md:px-10">

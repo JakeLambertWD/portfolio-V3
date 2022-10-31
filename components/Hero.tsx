@@ -28,7 +28,7 @@ export default function Hero({ pageInfo }: Props) {
     <div className="relative flex flex-col items-center justify-center h-screen space-y-6 overflow-hidden text-center">
       <div className="absolute mockup-code top-16 left-2">
         <pre data-prefix="$">
-          <code>npm i daisyui</code>
+          <code>npm i jake-lambert</code>
         </pre>
         <pre data-prefix=">" className="text-warning">
           <code>installing...</code>

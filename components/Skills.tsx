@@ -22,9 +22,14 @@ export default function Skills({ technologies }: Props) {
       </h3>
 
       <div className="grid grid-cols-4 gap-5">
-        {technologies?.map((tech) => (
-          <Skill key={tech._id} tech={tech} />
+        {technologies?.slice(0, technologies.length / 2).map((tech) => (
+          <Skill key={tech._id} tech={tech} directionBottom />
         ))}
+        {technologies
+          ?.slice(technologies.length / 2, technologies.length)
+          .map((tech) => (
+            <Skill key={tech._id} tech={tech} />
+          ))}
       </div>
     </motion.div>
   );
