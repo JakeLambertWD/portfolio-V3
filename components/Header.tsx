@@ -14,21 +14,16 @@ export default function Header({ socials }: Props) {
       <motion.div
         initial={{ x: -500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.5 }}
         className="flex flex-row items-start"
       >
         {socials?.map((icon) => {
           const titleToLowerCase = icon.title.toLocaleLowerCase();
 
-          // TODO add external links to social sites
+          // <ExternalLink key={icon._id} href={icon.url}>
+          //   </ExternalLink>
           return (
-            <SocialIcon
-              key={icon._id}
-              network={titleToLowerCase}
-              fgColor="gray"
-              bgColor="transparent"
-              href={icon.url}
-            />
+            <SocialIcon network={titleToLowerCase} key={icon._id} url={icon.url} fgColor="gray" bgColor="transparent" />
           );
         })}
       </motion.div>
@@ -37,13 +32,11 @@ export default function Header({ socials }: Props) {
         <motion.div
           initial={{ x: 500, opacity: 0, scale: 0.5 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-row items-center text-gray-300 cursor-pointer"
         >
           <SocialIcon network="email" fgColor="gray" bgColor="transparent" />
-          <p className="hidden text-sm text-gray-400 uppercase md:inline-flex">
-            Get In Touch!
-          </p>
+          <p className="hidden text-sm text-gray-400 uppercase md:inline-flex">Get In Touch!</p>
         </motion.div>
       </Link>
     </header>
