@@ -13,43 +13,58 @@ type Props = {
 
 export default function Projects({ personalProjects }: Props) {
   return (
-    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} className="relative z-0 flex flex-col items-center h-screen max-w-full mx-auto overflow-hidden text-left md:flex-row justify-evenly">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="relative z-0 flex flex-col items-center h-screen max-w-full mx-auto overflow-hidden text-left md:flex-row justify-evenly"
+    >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Projects</h3>
 
       <div className="scrollbar p-16 scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
         {personalProjects.map((project, i) => (
           // TODO: find a way to have the middle child start in the center
-          <div key={i} className="card glass w-[500px] h-[750px] snap-center flex-shrink-0 mx-12 opacity-90 transition-opacity hover:opacity-100 duration-200">
+          <div
+            key={i}
+            className="card glass w-[450px] h-[700px] snap-center flex-shrink-0 mx-8 opacity-90 transition-opacity hover:opacity-100 duration-200"
+          >
             <figure>
-              <motion.img viewport={{ once: true }} initial={{ y: -100 }} whileInView={{ y: 0 }} transition={{ duration: 1 }} src={urlFor(project?.image).url()} alt="car!" className="object-cover w-full" />
+              <motion.img
+                viewport={{ once: true }}
+                initial={{ y: -100 }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 0.5 }}
+                src={urlFor(project?.image).url()}
+                alt="car!"
+                className="w-full object-cover h-[250px] "
+              />
             </figure>
             <div className="card-body">
-              <h4 className="card-title">
-                Project example {i + 1} <div className="badge badge-secondary">NEW</div>
-              </h4>
-              <h1>{project?.title}</h1>
+              <div className="flex w-full justify-between">
+                <h4 className="card-title mb-6">{project?.title}</h4>
 
-              <div className="flex space-x-3 pb-5 mx-auto">
-                {project?.technologies.map((tech) => (
-                  <div key={tech?._id} className="tooltip" data-tip={tech.title}>
-                    <img src={urlFor(tech?.image).url()} className="h-8" />
-                  </div>
-                ))}
+                <div className="flex space-x-3 pb-5 ">
+                  {project?.technologies.map((tech) => (
+                    <div key={tech?._id} className="tooltip" data-tip={tech.title}>
+                      <img src={urlFor(tech?.image).url()} className="h-8" />
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="card-actions">
+              <div className="card-actions mb-6 mx-auto">
                 <ExternalLink href={project?.linkToBuild}>
-                  <button className="btn btn-primary">View site</button>
+                  <button className="btn btn-primary ">View site</button>
                 </ExternalLink>
                 <ExternalLink href={project?.linkToCode}>
-                  <button className="btn btn-primary">View code</button>
+                  <button className="btn btn-primary ">View code</button>
                 </ExternalLink>
               </div>
 
               <ul className="ml-2 space-y-2 overflow-y-scroll text-base list-disc max-h-96 pr-2  scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]">
                 {project?.points?.map((point, i) => (
                   <>
-                    <li key={i} className="text-center">
+                    <li key={i} className="text-center ">
                       {point}
                     </li>
                     <div className="divider"></div>

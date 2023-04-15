@@ -6,6 +6,17 @@ import Skill from "./Skill";
 type Props = { technologies: SkillType[] };
 
 export default function Skills({ technologies }: Props) {
+  const removeUnwanted = technologies?.filter((tech) => {
+    return (
+      tech.title !== "WordPress" &&
+      tech.title !== "Shopify" &&
+      tech.title !== "Git" &&
+      tech.title !== "HTML" &&
+      tech.title !== "CSS"
+    );
+  });
+  console.log(removeUnwanted);
+
   // TODO remove WordPress from this list
   return (
     <motion.div
@@ -20,11 +31,11 @@ export default function Skills({ technologies }: Props) {
         Hover over a skill for current proficiency
       </h3>
 
-      <div className="grid grid-cols-4 gap-5">
-        {technologies?.slice(0, technologies.length / 2).map((tech) => (
+      <div className="grid grid-cols-4 gap-8">
+        {removeUnwanted?.slice(0, removeUnwanted.length / 2).map((tech) => (
           <Skill key={tech._id} tech={tech} directionBottom />
         ))}
-        {technologies?.slice(technologies.length / 2, technologies.length).map((tech) => (
+        {removeUnwanted?.slice(removeUnwanted.length / 2, removeUnwanted.length).map((tech) => (
           <Skill key={tech._id} tech={tech} />
         ))}
       </div>
