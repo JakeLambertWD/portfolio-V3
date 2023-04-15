@@ -19,18 +19,18 @@ export default {
 		{
 			name: 'company',
 			title: 'Company',
-			type: 'text'
+			type: 'string'
 		},
 		{
 			name: 'dateStarted',
 			title: 'DateStarted',
-			type: 'date'
+			type: 'string'
 		},
 		{
 			name: 'dateEnded',
 			title: 'DateEnded',
-			type: 'date'
-		},
+			type: 'string'
+		}, 
 		{
 			name: 'isCurrentlyWorkingHere',
 			title: 'IsCurrentlyWorkingHere',

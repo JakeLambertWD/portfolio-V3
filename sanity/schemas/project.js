@@ -38,5 +38,11 @@ export default {
 			title: 'LinkToCode',
 			type: 'url'
 		},
+		{
+			name: 'points',
+			title: 'Points',
+			type: 'array',
+			of: [{ type: 'string' }]
+		}
 	]
 };

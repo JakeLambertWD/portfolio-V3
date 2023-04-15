@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Card } from "react-daisyui";
+import { ExternalLink } from "react-external-link";
+
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
 
@@ -11,77 +13,57 @@ type Props = {
 
 export default function Projects({ personalProjects }: Props) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2.5 }}
-      className="relative z-0 flex flex-col items-center h-screen max-w-full mx-auto overflow-hidden text-left md:flex-row justify-evenly"
-    >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
-        Projects
-      </h3>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} className="relative z-0 flex flex-col items-center h-screen max-w-full mx-auto overflow-hidden text-left md:flex-row justify-evenly">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Projects</h3>
 
       <div className="scrollbar p-16 scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
         {personalProjects.map((project, i) => (
           // TODO: find a way to have the middle child start in the center
-          <div
-            key={i}
-            className="card glass w-[500px] h-[750px] snap-center flex-shrink-0 mx-12 opacity-70 hover:opacity-100 hover:scale-105 duration-200"
-          >
+          <div key={i} className="card glass w-[500px] h-[750px] snap-center flex-shrink-0 mx-12 opacity-90 transition-opacity hover:opacity-100 duration-200">
             <figure>
-              <motion.img
-                initial={{ y: -200 }}
-                whileInView={{ y: 0 }}
-                transition={{ duration: 2.5 }}
-                src={urlFor(project?.image).url()}
-                alt="car!"
-                className="object-cover w-full"
-              />
+              <motion.img viewport={{ once: true }} initial={{ y: -100 }} whileInView={{ y: 0 }} transition={{ duration: 1 }} src={urlFor(project?.image).url()} alt="car!" className="object-cover w-full" />
             </figure>
             <div className="card-body">
               <h4 className="card-title">
-                Project example {i + 1}{" "}
-                <div className="badge badge-secondary">NEW</div>
+                Project example {i + 1} <div className="badge badge-secondary">NEW</div>
               </h4>
               <h1>{project?.title}</h1>
 
-              <div className="flex pb-5 mx-auto">
+              <div className="flex space-x-3 pb-5 mx-auto">
                 {project?.technologies.map((tech) => (
-                  <div
-                    key={tech?._id}
-                    className="pr-1 avatar tooltip"
-                    data-tip={tech?.title}
-                  >
-                    {/* //TODO make logo center of parent */}
-                    <div className="w-10 mask mask-hexagon">
-                      <img src={urlFor(tech?.image).url()} />
-                    </div>
+                  <div key={tech?._id} className="tooltip" data-tip={tech.title}>
+                    <img src={urlFor(tech?.image).url()} className="h-8" />
                   </div>
                 ))}
               </div>
 
               <div className="card-actions">
-                <Link href={project?.linkToBuild}>
-                  <a target="_blank">
-                    <button className="btn btn-primary">View site</button>
-                  </a>
-                </Link>
-                <Link href={project?.linkToCode}>
-                  <a target="_blank">
-                    <button className="btn btn-primary">View code</button>
-                  </a>
-                </Link>
+                <ExternalLink href={project?.linkToBuild}>
+                  <button className="btn btn-primary">View site</button>
+                </ExternalLink>
+                <ExternalLink href={project?.linkToCode}>
+                  <button className="btn btn-primary">View code</button>
+                </ExternalLink>
               </div>
 
-              <div className="collapse collapse-plus">
+              <ul className="ml-2 space-y-2 overflow-y-scroll text-base list-disc max-h-96 pr-2  scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]">
+                {project?.points?.map((point, i) => (
+                  <>
+                    <li key={i} className="text-center">
+                      {point}
+                    </li>
+                    <div className="divider"></div>
+                  </>
+                ))}
+              </ul>
+
+              {/* <div className="collapse collapse-plus">
                 <input type="checkbox" className="peer" />
                 <div className="collapse-title">Description...</div>
                 <div className="collapse-content">
-                  <p className="overflow-y-scroll h-36 scrollbar scrollbar-thin scrollbar-thumb-yellow-500">
-                    {project?.summary}
-                  </p>
+                  <p className="overflow-y-scroll h-36 scrollbar scrollbar-thin scrollbar-thumb-yellow-500">{project?.summary}</p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <p className="absolute bottom-3 left-3">{i + 1}</p>
           </div>

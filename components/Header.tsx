@@ -1,5 +1,7 @@
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
+import { ExternalLink } from "react-external-link";
+
 import { Social } from "../typings";
 
 const { motion } = require("framer-motion");
@@ -15,19 +17,18 @@ export default function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-start"
       >
-        {socials.map((icon) => {
+        {socials?.map((icon) => {
           const titleToLowerCase = icon.title.toLocaleLowerCase();
+
+          // TODO add external links to social sites
           return (
-            <Link key={icon?._id} href={icon?.url}>
-              <a target="_blank">
-                <SocialIcon
-                  key={icon?._id}
-                  network={titleToLowerCase}
-                  fgColor="gray"
-                  bgColor="transparent"
-                />
-              </a>
-            </Link>
+            <SocialIcon
+              key={icon._id}
+              network={titleToLowerCase}
+              fgColor="gray"
+              bgColor="transparent"
+              href={icon.url}
+            />
           );
         })}
       </motion.div>

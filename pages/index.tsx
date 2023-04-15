@@ -29,6 +29,9 @@ type Props = {
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   return (
     // TODO have a play around with scrollbar-none
+
+    // TODO have the Project Card show a link to the portfolio-v3 Storybook
+
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin">
       <Head>
         <title>Jakes Portfolio</title>
@@ -63,17 +66,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       </section>
 
       <Link href="#hero">
-        <footer
-          className="sticky w-full cursor-pointer bottom-7 bottom-5 tooltip"
-          data-tip="Back to Top"
-        >
-          {/* <div className="flex items-center justify-center">
-            <img
-              src="https://avatars.githubusercontent.com/u/59619665?v=4"
-              alt="me"
-              className="w-10 h-10 rounded-full cursor-pointer filter grayscale hover:grayscale-0"
-            />
-          </div> */}
+        <footer className="sticky w-full cursor-pointer bottom-7 bottom-5 tooltip" data-tip="Back to Top">
           <div className="avatar online">
             <div className="w-16 rounded-full">
               <img src="https://avatars.githubusercontent.com/u/59619665?v=4" />

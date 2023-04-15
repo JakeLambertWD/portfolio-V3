@@ -14,46 +14,39 @@ type Props = {
 export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
+      "npm i jake-lambert",
       "installing...",
-      "Done!",
+      "done!",
       // `Hi, The Name is ${pageInfo?.name}`,
       // "Coffee-fuels-the-best-code.tsx",
       // "<ForeverEvolvingIndustry />",
     ],
-    loop: true,
     delaySpeed: 2000,
   });
 
   return (
     <div className="relative flex flex-col items-center justify-center h-screen space-y-6 overflow-hidden text-center">
-      <div className="absolute mockup-code top-16 left-2">
-        <pre data-prefix="$">
-          <code>npm i jake-lambert</code>
-        </pre>
-        <pre data-prefix=">" className="text-warning">
-          <code>installing...</code>
-        </pre>
-        <pre data-prefix=">" className="text-success">
-          <code>Done!</code>
-        </pre>
-      </div>
-
-      {/* <BackgroundCircles /> */}
-      {/* <Image
+      <BackgroundCircles />
+      <Image
         className="object-cover mx-auto rounded-full"
         src={urlFor(pageInfo?.heroImage).url()}
         alt={pageInfo?.name}
         width={200}
         height={200}
-      /> */}
+      />
       <div className="z-20">
         <h2 className="uppercase text-sm text-gray-500 pb-2 tracking-[16px]">
           {pageInfo?.role}
         </h2>
 
-        {/* Make the TypeWriter stop on the last piece of text */}
-        <h1 className="px-24 text-3xl font-semibold lg:text-4xl">
-          <span>{text}</span>
+        <h1 className="px-24 text-xl lg:text-4xl">
+          <code
+            className={`${text == "installing..." && "text-warning"} ${
+              text == "done!" && "text-success"
+            }`}
+          >
+            {text}
+          </code>
           <Cursor cursorColor="#f7ab0a" />
         </h1>
 
