@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
+import { urlFor } from "../sanity";
 
 import { PageInfo, Experience, Skill, Project, Social } from "../typings";
 import { fetchExperiences } from "../utils/fetchExperiences";
@@ -45,10 +46,6 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section id="about" className="snap-center">
-        <About pageInfo={pageInfo} />
-      </section>
-
       <section id="experience" className="snap-center">
         <WorkExperience experiences={experiences} />
       </section>
@@ -61,6 +58,10 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <Projects personalProjects={projects} />
       </section>
 
+      <section id="about" className="snap-center">
+        <About pageInfo={pageInfo} />
+      </section>
+
       <section id="contact" className="snap-center">
         <ContactMe />
       </section>
@@ -69,7 +70,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <footer className="sticky w-full cursor-pointer bottom-7 bottom-5 tooltip" data-tip="Back to Top">
           <div className="avatar online">
             <div className="w-16 rounded-full">
-              <img src="https://avatars.githubusercontent.com/u/59619665?v=4" />
+              <img src={urlFor(pageInfo?.heroImage).url()} />
             </div>
           </div>
         </footer>

@@ -26,7 +26,7 @@ export default function Projects({ personalProjects }: Props) {
           // TODO: find a way to have the middle child start in the center
           <div
             key={i}
-            className="card glass w-[450px] h-[700px] snap-center flex-shrink-0 mx-8 opacity-90 transition-opacity hover:opacity-100 duration-200"
+            className="card glass w-[450px] h-[700px] snap-center flex-shrink-0 mx-8 opacity-90 transition-opacity hover:opacity-100 duration-100"
           >
             <figure>
               <motion.img
