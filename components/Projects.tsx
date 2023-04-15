@@ -41,7 +41,7 @@ export default function Projects({ personalProjects }: Props) {
             </figure>
             <div className="card-body">
               <div className="flex w-full justify-between">
-                <h4 className="card-title mb-6">{project?.title}</h4>
+                <h6 className="mb-6 text-xl font-light">{project?.title}</h6>
 
                 <div className="flex space-x-3 pb-5 ">
                   {project?.technologies.map((tech) => (

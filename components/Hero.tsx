@@ -28,7 +28,7 @@ export default function Hero({ pageInfo }: Props) {
     <div className="relative flex flex-col items-center justify-center h-screen space-y-6 overflow-hidden text-center">
       <BackgroundCircles />
       <Image
-        className="object-cover mx-auto rounded-full"
+        className="mx-auto rounded-full  object-cover object-center"
         src={urlFor(pageInfo?.heroImage).url()}
         alt={pageInfo?.name}
         width={200}
