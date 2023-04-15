@@ -6,6 +6,7 @@ import Skill from "./Skill";
 type Props = { technologies: SkillType[] };
 
 export default function Skills({ technologies }: Props) {
+  // TODO remove WordPress from this list
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -15,7 +16,9 @@ export default function Skills({ technologies }: Props) {
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">My Skills</h3>
 
-      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">Hover over a skill for current proficiency</h3>
+      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+        Hover over a skill for current proficiency
+      </h3>
 
       <div className="grid grid-cols-4 gap-5">
         {technologies?.slice(0, technologies.length / 2).map((tech) => (

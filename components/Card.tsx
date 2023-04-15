@@ -9,7 +9,15 @@ export default function Card({ experience }: Props) {
   return (
     <article className="card glass flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] snap-center bg-[#292929] p-10 opacity-90 hover:opacity-100 cursor-pointer transition-opacity duration-100 overflow-hidden">
       <div className="h-32 w-full flex items-center justify-center">
-        <motion.img initial={{ y: -100, opacity: 0 }} transition={{ duration: 1 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className={`object-cover object-center w-[${experience.company === "VGD Limited" ? "40%" : "50%"}] my-5`} src={urlFor(experience?.companyImage).url()} alt="Profile pic" />
+        <motion.img
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className={`object-cover object-center w-[${experience.company === "VGD Limited" ? "40%" : "50%"}] my-5`}
+          src={urlFor(experience?.companyImage).url()}
+          alt="Profile pic"
+        />
       </div>
 
       <div className="px-0 md:px-10 w-full">
