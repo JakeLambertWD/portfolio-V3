@@ -63,12 +63,10 @@ export default function Projects({ personalProjects }: Props) {
 
               <ul className="ml-2 space-y-2 overflow-y-scroll text-base list-disc max-h-96 pr-2  scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]">
                 {project?.points?.map((point, i) => (
-                  <>
-                    <li key={i} className="text-center ">
-                      {point}
-                    </li>
+                  <div key={i}>
+                    <li className="text-center ">{point}</li>
                     <div className="divider"></div>
-                  </>
+                  </div>
                 ))}
               </ul>
 
