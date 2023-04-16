@@ -28,7 +28,6 @@
     "sanity-plugin-dark-mode": "^0.0.33",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/JakeLambertWD/portfolio-V3.git"
