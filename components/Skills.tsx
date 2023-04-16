@@ -15,9 +15,7 @@ export default function Skills({ technologies }: Props) {
       tech.title !== "CSS"
     );
   });
-  console.log(removeUnwanted);
 
-  // TODO remove WordPress from this list
   return (
     <motion.div
       initial={{ opacity: 0 }}

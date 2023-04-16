@@ -80,7 +80,6 @@ export default function Projects({ personalProjects }: Props) {
                 </div>
               </div> */}
             </div>
-            <p className="absolute bottom-3 left-3">{i + 1}</p>
           </div>
         ))}
       </div>
