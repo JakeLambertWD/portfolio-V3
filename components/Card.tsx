@@ -14,7 +14,7 @@ export default function Card({ experience }: Props) {
           transition={{ duration: 0.5 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          className={`object-cover object-center w-[${experience.company === "VGD Limited" ? "40%" : "50%"}] my-5`}
+          className={`object-cover object-center w-[${experience.company === "VGD Limited" ? "200px" : "300px"}] my-5`}
           src={urlFor(experience?.companyImage).url()}
           alt="Profile pic"
         />
