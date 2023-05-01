@@ -68,7 +68,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <footer className="sticky w-full cursor-pointer bottom-7 bottom-5 tooltip" data-tip="Back to Top">
           <div className="avatar online">
             <div className="w-16 rounded-full">
-              <img src={urlFor(pageInfo?.heroImage).url()} />
+              <Image src={urlFor(pageInfo?.heroImage).url()} width="100%" height="100%" alt="Profile pic" />
             </div>
           </div>
         </footer>

@@ -46,7 +46,7 @@ export default function Projects({ personalProjects }: Props) {
                 <div className="flex space-x-3 pb-5 ">
                   {project?.technologies.map((tech) => (
                     <div key={tech?._id} className="tooltip" data-tip={tech.title}>
-                      <img src={urlFor(tech?.image).url()} className="h-8" />
+                      <img src={urlFor(tech?.image).url()} className="h-8" alt="Tech" />
                     </div>
                   ))}
                 </div>
