@@ -1,3 +1,4 @@
+import Image from "next/image";
 import JakePic from "../public/jake.jpg";
 import { urlFor } from "../sanity";
 import { Experience } from "../typings";
@@ -31,7 +32,8 @@ export default function Card({ experience }: Props) {
         <div className="flex my-8 space-x-3">
           {experience?.technologies?.map((technology) => (
             <div key={technology._id} className="tooltip" data-tip={technology.title}>
-              <img src={urlFor(technology?.image).url()} alt="Tailwind" className="h-8" />
+              {/* <img src={urlFor(technology?.image).url()} alt="Tailwind" className="h-8" /> */}
+              <Image src={urlFor(technology?.image).url()} alt="Tailwind" className="h-8" layout="fill" />
             </div>
           ))}
         </div>
