@@ -32,7 +32,7 @@ export default function Card({ experience }: Props) {
         <div className="flex my-8 space-x-3">
           {experience?.technologies?.map((technology) => (
             <div key={technology._id} className="tooltip" data-tip={technology.title}>
-              <Image src={urlFor(technology?.image).url()} alt="Tech" />
+              <Image src={urlFor(technology?.image).url()} layout="fill" alt="Tech" />
             </div>
           ))}
         </div>
