@@ -32,8 +32,7 @@ export default function Card({ experience }: Props) {
         <div className="flex my-8 space-x-3">
           {experience?.technologies?.map((technology) => (
             <div key={technology._id} className="tooltip" data-tip={technology.title}>
-              {/* <img src={urlFor(technology?.image).url()} alt="Tailwind" className="h-8" /> */}
-              <Image src={urlFor(technology?.image).url()} alt="Tailwind" className="h-8" layout="fill" />
+              <Image src={urlFor(technology?.image).url()} alt="Tech" />
             </div>
           ))}
         </div>

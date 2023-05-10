@@ -4,6 +4,7 @@ import { ExternalLink } from "react-external-link";
 
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
+import Image from "next/image";
 
 const { motion } = require("framer-motion");
 
@@ -46,7 +47,7 @@ export default function Projects({ personalProjects }: Props) {
                 <div className="flex space-x-3 pb-5 ">
                   {project?.technologies.map((tech) => (
                     <div key={tech?._id} className="tooltip" data-tip={tech.title}>
-                      <img src={urlFor(tech?.image).url()} className="h-8" alt="Tech" />
+                      <Image src={urlFor(tech?.image).url()} layout="fill" alt="Tech" />
                     </div>
                   ))}
                 </div>
