@@ -34,7 +34,7 @@ export default function Projects({ personalProjects }: Props) {
                 viewport={{ once: true }}
                 initial={{ y: -100 }}
                 whileInView={{ y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.4 }}
                 src={urlFor(project?.image).url()}
                 alt="car!"
                 className="w-full object-cover h-[250px] "
